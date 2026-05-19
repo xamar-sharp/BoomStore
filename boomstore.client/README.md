@@ -1,16 +1,351 @@
-# React + Vite
+# ⚡ BoomStore
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Современный интернет-магазин электроники
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# 📌 О проекте
 
-## React Compiler
+BoomStore — это полноценный fullstack интернет-магазин электроники с современным интерфейсом, авторизацией, корзиной, административной панелью и системой заказов.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Frontend разработан на React, backend — на ASP.NET Core Web API.
 
-## Expanding the ESLint configuration
+Проект поддерживает:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- регистрацию и авторизацию;
+- JWT-аутентификацию;
+- каталог товаров;
+- страницу товара;
+- корзину;
+- оформление заказов;
+- административную панель;
+- управление товарами;
+- просмотр заказов;
+- адаптивный интерфейс.
+
+---
+
+# 🖼️ Возможности
+
+## 👤 Пользователь
+
+- Регистрация
+- Авторизация
+- Просмотр каталога
+- Просмотр страницы товара
+- Добавление товаров в корзину
+- Удаление товаров из корзины
+- Оформление заказа
+- Просмотр профиля
+
+---
+
+## 🛠️ Администратор
+
+- Создание товаров
+- Удаление товаров
+- Просмотр всех заказов
+- Удаление заказов
+- Доступ к админ-панели
+
+---
+
+# 🚀 Технологии
+
+## Frontend
+
+- React
+- React Router DOM
+- Axios
+- Context API
+- CSS3
+
+---
+
+## Backend
+
+- ASP.NET Core Web API
+- Entity Framework Core
+- PostgreSQL
+- JWT Authentication
+
+---
+
+# 📂 Структура проекта
+
+```bash
+BoomStore/
+│
+├── BoomStore.Client/
+│   ├── src/
+│   │   ├── api/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── pages/
+│   │   ├── styles/
+│   │   └── App.jsx
+│
+├── BoomStore.Server/
+│   ├── Controllers/
+│   ├── Data/
+│   ├── DTOs/
+│   ├── Models/
+│   ├── Services/
+│   └── Program.cs
+│
+└── README.md
+```
+
+---
+
+# 🔐 Авторизация
+
+В проекте используется JWT-аутентификация.
+
+После успешного входа:
+
+- токен сохраняется в localStorage;
+- данные пользователя сохраняются в localStorage;
+- пользователь автоматически получает доступ к защищённым страницам.
+
+---
+
+# 🛡️ Protected Routes
+
+В проекте реализованы защищённые маршруты.
+
+Неавторизованные пользователи не могут:
+
+- открывать корзину;
+- открывать профиль;
+- просматривать каталог;
+- переходить в админ-панель.
+
+Админ-панель доступна только пользователям с ролью:
+
+```js
+Admin
+```
+
+---
+
+# 🛒 Корзина
+
+Корзина реализована через React Context API.
+
+Поддерживается:
+
+- добавление товаров;
+- удаление товаров;
+- очистка корзины;
+- вычисление общей стоимости.
+
+---
+
+# 📦 Система заказов
+
+После оформления заказа:
+
+- товары отправляются на backend;
+- создаётся запись заказа;
+- вычисляется итоговая стоимость;
+- заказ отображается у администратора.
+
+---
+
+# 🎨 Интерфейс
+
+В проекте используется:
+
+- единый адаптивный CSS;
+- glassmorphism;
+- responsive layout;
+- фиксированные контейнеры;
+- адаптация под мобильные устройства;
+- hover-анимации;
+- тёмная тема.
+
+---
+
+# 📱 Адаптивность
+
+Интерфейс корректно работает на:
+
+- ПК;
+- ноутбуках;
+- планшетах;
+- мобильных устройствах.
+
+Используются media queries.
+
+---
+
+# ⚙️ Установка проекта
+
+## 1. Клонировать репозиторий
+
+```bash
+git clone https://github.com/YOUR_USERNAME/BoomStore.git
+```
+
+---
+
+## 2. Backend
+
+Перейти в папку сервера:
+
+```bash
+cd BoomStore.Server
+```
+
+Установить зависимости:
+
+```bash
+dotnet restore
+```
+
+Запустить backend:
+
+```bash
+dotnet run
+```
+
+---
+
+## 3. Frontend
+
+Перейти в клиент:
+
+```bash
+cd BoomStore.Client
+```
+
+Установить зависимости:
+
+```bash
+npm install
+```
+
+Запустить frontend:
+
+```bash
+npm run dev
+```
+
+---
+
+# 🗄️ База данных
+
+Используется PostgreSQL.
+
+Entity Framework автоматически создаёт:
+
+- Users
+- Products
+- Categories
+- Orders
+- OrderItems
+
+---
+
+# 📋 Категории товаров
+
+В проекте реализованы категории:
+
+- Смартфоны
+- Ноутбуки
+- Наушники
+- Планшеты
+- Смарт-часы
+- Мониторы
+- Игровые консоли
+- Телевизоры
+- Клавиатуры
+- Компьютерные мыши
+- Видеокарты
+- Процессоры
+- Колонки
+- Веб-камеры
+- Микрофоны
+
+---
+
+# 📸 Основные страницы
+
+## 🏠 Главная страница
+
+- приветственный экран;
+- навигация;
+- переход в каталог.
+
+---
+
+## 🛍️ Каталог
+
+- сетка товаров;
+- карточки;
+- изображения;
+- кнопки действий.
+
+---
+
+## 📄 Страница товара
+
+- изображение;
+- описание;
+- цена;
+- добавление в корзину.
+
+---
+
+## 🛒 Корзина
+
+- список товаров;
+- удаление;
+- оформление заказа.
+
+---
+
+## 🛠️ Админ-панель
+
+- создание товаров;
+- управление товарами;
+- просмотр заказов.
+
+---
+
+# 🔥 Особенности проекта
+
+✅ JWT Authentication  
+✅ Protected Routes  
+✅ Admin Panel  
+✅ Shopping Cart  
+✅ Order System  
+✅ Responsive Design  
+✅ React Context API  
+✅ Axios API Integration  
+✅ ASP.NET Core API  
+✅ PostgreSQL Database  
+
+---
+
+# 📈 Возможные улучшения
+
+В будущем проект можно расширить:
+
+- оплатой;
+- поиском товаров;
+- фильтрацией;
+- отзывами;
+- рейтингами;
+- избранным;
+- загрузкой изображений;
+- pagination;
+- Docker;
+- deployment.
+
+---
+
+# 👨‍💻 Автор
+
+Студенческий учебный проект
