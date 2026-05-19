@@ -206,7 +206,7 @@ function AdminPage() {
 
                 </select>
 
-                <button type="submit">
+                <button type="submit" className="btn">
 
                     Создать товар
 
