@@ -1,4 +1,4 @@
-﻿// HomePage.jsx
+﻿
 
 import {
     Link

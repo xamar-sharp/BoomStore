@@ -42,9 +42,7 @@ public class ProductsController : ControllerBase
         return Ok(product);
     }
 
-    /* =========================
-       ADMIN ONLY
-    ========================= */
+
 
     [Authorize(Roles = "Admin")]
     [HttpPost]

@@ -41,9 +41,6 @@ public class AuthController : ControllerBase
 
         var role = "User";
 
-        /* =========================
-           ADMIN CHECK
-        ========================= */
 
         if (
             dto.Name.ToLower() == "admin"

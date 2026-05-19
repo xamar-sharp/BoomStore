@@ -1,5 +1,4 @@
-﻿// Navbar.jsx
-
+﻿
 import {
     Link,
     useNavigate

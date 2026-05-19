@@ -22,9 +22,6 @@ public class OrdersController : ControllerBase
         _context = context;
     }
 
-    /* =========================================
-       CREATE ORDER
-    ========================================= */
 
     [HttpPost]
     public async Task<IActionResult> Create(
@@ -82,9 +79,6 @@ public class OrdersController : ControllerBase
         return Ok(order);
     }
 
-    /* =========================================
-       GET ALL ORDERS
-    ========================================= */
 
     [Authorize(Roles = "Admin")]
     [HttpGet]
@@ -102,9 +96,6 @@ public class OrdersController : ControllerBase
         return Ok(orders);
     }
 
-    /* =========================================
-       DELETE ORDER
-    ========================================= */
 
     [Authorize(Roles = "Admin")]
     [HttpDelete("{id}")]
