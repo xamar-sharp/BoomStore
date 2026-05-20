@@ -191,19 +191,36 @@ function AdminPage() {
                         })
                     }
                 >
-
                     <option value={1}>
                         Смартфоны
                     </option>
-
                     <option value={2}>
                         Ноутбуки
                     </option>
-
                     <option value={3}>
                         Наушники
                     </option>
-
+                    <option value={4}>
+                        Планшеты
+                    </option>
+                    <option value={5}>
+                        Смарт-часы
+                    </option>
+                    <option value={6}>
+                        Мониторы
+                    </option>
+                    <option value={7}>
+                        Игровые консоли
+                    </option>
+                    <option value={8}>
+                        Телевизоры
+                    </option>
+                    <option value={9}>
+                        Клавиатуры
+                    </option>
+                    <option value={10}>
+                        Компьютерные мыши
+                    </option>
                 </select>
 
                 <button type="submit" className="btn">
@@ -237,7 +254,7 @@ function AdminPage() {
                                 {product.price} ₽
                             </p>
 
-                            <button
+                            <button className="btn"
                                 onClick={() =>
                                     deleteProduct(
                                         product.id
